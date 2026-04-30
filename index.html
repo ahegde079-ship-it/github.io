@@ -3,583 +3,928 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akshatha N Hegde</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<title>Akshatha N Hegde — Enterprise Adoption Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #FAFAF8; --bg2: #F3EFEA; --card: #FFF;
-  --t1: #111; --t2: #444; --t3: #888;
-  --acc: #C45A3C; --acc2: #E8D5CC;
-  --bdr: #E0DCD7;
-  --dk: #131315; --dk2: #1C1C1F; --dkt: #EDEBE7; --dkt2: #908D88;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  /* ── RESET & BASE ────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr);height:50px;display:flex;align-items:center;padding:0 2rem}
-nav .n-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center}
-nav .n-name{font-weight:700;font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase}
-nav .n-links{display:flex;gap:1.6rem}
-nav .n-links a{font-size:0.76rem;font-weight:500;color:var(--t3);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s}
-nav .n-links a:hover{color:var(--acc)}
+  :root {
+    --ink:    #0f1a14;
+    --mid:    #3d5247;
+    --muted:  #7a9485;
+    --rule:   #d4e0da;
+    --bg:     #f7f5f0;
+    --cream:  #efede7;
+    --accent: #1a5c3a;
+    --amber:  #b45309;
+    --white:  #ffffff;
+    --serif:  'Instrument Serif', Georgia, serif;
+    --sans:   'DM Sans', system-ui, sans-serif;
+  }
 
-/* LAYOUT */
-section{padding:5rem 2rem}
-.inner{max-width:1000px;margin:0 auto}
-.narrow{max-width:760px;margin:0 auto}
+  html { scroll-behavior: smooth; }
 
-/* TYPE */
-.tag{font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--acc);margin-bottom:1rem}
-.title{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,2.8rem);line-height:1.15;margin-bottom:1rem}
-.sub{font-size:0.98rem;color:var(--t2);max-width:580px;margin-bottom:2rem;line-height:1.8}
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding-top:50px}
-.hero-grid{display:grid;grid-template-columns:120px 1fr;gap:3rem;align-items:center}
-.avatar{width:120px;height:120px;border-radius:50%;background:var(--dk);display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:2.4rem;color:var(--dkt);letter-spacing:0.02em}
-.hero-text h1{font-family:'Instrument Serif',serif;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1.1;margin-bottom:1rem}
-.hero-text h1 em{font-style:italic;color:var(--acc)}
-.hero-text p{font-size:1rem;color:var(--t2);max-width:540px;line-height:1.8;margin-bottom:1.5rem}
-.hero-tags{display:flex;gap:0.5rem;flex-wrap:wrap}
-.hero-tags span{font-size:0.7rem;font-weight:600;letter-spacing:0.06em;padding:0.3rem 0.7rem;border:1px solid var(--bdr);color:var(--t2)}
+  /* ── TYPOGRAPHY ──────────────────────────────────────────────────── */
+  h1,h2,h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; }
+  h1 { font-size: clamp(2.8rem, 6vw, 5.2rem); }
+  h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: var(--accent); }
+  h3 { font-size: 1.3rem; }
+  p  { color: var(--mid); font-size: 0.975rem; line-height: 1.8; }
 
-/* ABOUT */
-.about-bg{background:var(--bg2)}
-.about-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-.about-cols p{font-size:0.92rem;color:var(--t2);line-height:1.8;margin-bottom:1rem}
-.about-cols p strong{color:var(--t1);font-weight:600}
-.about-right{border:1px solid var(--bdr);background:var(--card);padding:1.8rem}
-.about-right h4{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--acc);margin-bottom:1rem}
-.about-stat{padding:0.5rem 0;border-bottom:1px solid rgba(0,0,0,0.04)}
-.about-stat:last-child{border-bottom:none}
-.about-stat .as-num{font-family:'Instrument Serif',serif;font-size:1.3rem;color:var(--acc);line-height:1}
-.about-stat .as-label{font-size:0.78rem;color:var(--t3)}
+  .label {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
 
-/* CASE STUDIES */
-.cs-list{display:flex;flex-direction:column;gap:0}
-.cs-item{border-top:1px solid var(--bdr);padding:2.5rem 0;display:grid;grid-template-columns:60px 1fr;gap:2rem}
-.cs-item:last-child{border-bottom:1px solid var(--bdr)}
-.cs-num{font-family:'Instrument Serif',serif;font-size:1.5rem;color:var(--acc);padding-top:0.1rem}
-.cs-body h3{font-size:1.1rem;font-weight:600;margin-bottom:0.3rem;line-height:1.3}
-.cs-body .cs-context{font-size:0.82rem;color:var(--t3);margin-bottom:0.8rem;font-style:italic}
-.cs-body p{font-size:0.9rem;color:var(--t2);line-height:1.75;margin-bottom:0.8rem}
-.cs-metrics{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid rgba(0,0,0,0.05)}
-.cs-metric .cm-val{font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--acc);font-weight:400}
-.cs-metric .cm-label{font-size:0.72rem;color:var(--t3)}
+  /* ── LAYOUT ──────────────────────────────────────────────────────── */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+  .wide      { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  section    { padding: 6rem 0; border-top: 1px solid var(--rule); }
+  section:first-of-type { border-top: none; }
 
-/* PROJECTS (DARK) */
-.projects-dark{background:var(--dk);color:var(--dkt);padding:5rem 2rem}
-.projects-dark .tag{color:var(--acc)}
-.projects-dark .title{color:var(--dkt)}
-.projects-dark .sub{color:var(--dkt2)}
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.proj-card{border:1px solid rgba(255,255,255,0.08);background:var(--dk2);padding:2rem;transition:background 0.3s}
-.proj-card:hover{background:rgba(255,255,255,0.04)}
-.proj-card .pc-type{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--acc);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.6rem}
-.proj-card h3{font-family:'Instrument Serif',serif;font-size:1.3rem;margin-bottom:0.6rem;line-height:1.25;color:var(--dkt)}
-.proj-card p{font-size:0.85rem;color:var(--dkt2);line-height:1.7;margin-bottom:0.8rem}
-.proj-card .pc-tags{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.6rem}
-.proj-card .pc-tags span{font-size:0.62rem;padding:0.2rem 0.5rem;border:1px solid rgba(255,255,255,0.12);color:var(--dkt2);letter-spacing:0.04em}
-.proj-nda{font-size:0.72rem;color:var(--dkt2);font-style:italic;margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.06)}
+  /* ── NAV ─────────────────────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(247,245,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
 
-/* HIGHLIGHTS */
-.hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);margin-bottom:2.5rem}
-.hl-card{background:var(--card);padding:1.5rem;text-align:center}
-.hl-card .hc-val{font-family:'Instrument Serif',serif;font-size:2rem;color:var(--acc);line-height:1}
-.hl-card .hc-label{font-size:0.75rem;color:var(--t3);margin-top:0.3rem}
+  /* ── HERO ────────────────────────────────────────────────────────── */
+  #hero {
+    padding: 14rem 0 8rem;
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(ellipse, rgba(26,92,58,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label { margin-bottom: 2rem; }
+  .hero-headline { margin-bottom: 1.5rem; }
+  .hero-headline em { font-style: italic; color: var(--accent); }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--mid);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+  .hero-stats {
+    display: flex; gap: 3rem; flex-wrap: wrap;
+    margin-bottom: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+  }
+  .btn-primary:hover { background: #14472d; }
+  .btn-ghost {
+    border: 1px solid var(--rule);
+    color: var(--mid);
+    background: transparent;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-.skills-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem}
-.skill-group h4{font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--acc);margin-bottom:0.6rem}
-.skill-group p{font-size:0.82rem;color:var(--t2);line-height:1.7}
+  /* ── FRAMEWORK ───────────────────────────────────────────────────── */
+  #framework { background: var(--cream); }
+  .framework-intro { max-width: 620px; margin-bottom: 3.5rem; }
+  .tifa-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--rule);
+    background: var(--white);
+  }
+  .tifa-card {
+    padding: 2rem 1.6rem;
+    border-right: 1px solid var(--rule);
+    position: relative;
+  }
+  .tifa-card:last-child { border-right: none; }
+  .tifa-letter {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    color: var(--accent);
+    opacity: 0.15;
+    line-height: 1;
+    position: absolute;
+    top: 1.2rem; right: 1.4rem;
+  }
+  .tifa-tag {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    background: var(--accent);
+    color: var(--white);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+  }
+  .tifa-card h3 {
+    font-size: 1rem;
+    font-family: var(--sans);
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .tifa-card p { font-size: 0.85rem; line-height: 1.7; }
+  .tifa-signal {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.78rem;
+    color: var(--amber);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .framework-note {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg);
+    border-left: 3px solid var(--accent);
+  }
+  .framework-note p { font-size: 0.88rem; }
 
-/* FOOTER */
-footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--bdr)}
-footer p{font-size:0.82rem;color:var(--t3)}
-footer .f-name{font-weight:600;color:var(--t1);font-size:0.88rem;margin-bottom:0.3rem}
+  /* ── CASE STUDIES ────────────────────────────────────────────────── */
+  .case { margin-bottom: 5rem; padding-bottom: 5rem; border-bottom: 1px solid var(--rule); }
+  .case:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .case-meta {
+    display: flex; align-items: center; gap: 1.5rem;
+    margin-bottom: 2rem; flex-wrap: wrap;
+  }
+  .case-num {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    color: var(--rule);
+    line-height: 1;
+  }
+  .case-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .tag {
+    padding: 0.2rem 0.65rem;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    font-size: 0.72rem;
+    color: var(--muted);
+    border-radius: 1px;
+  }
+  .case h3 {
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .case-tifa {
+    display: inline-flex; gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .tifa-badge {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(26,92,58,0.08);
+    color: var(--accent);
+    border-radius: 1px;
+  }
+  .case-body { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .case-text {}
+  .case-text .situation { margin-bottom: 1.5rem; }
+  .case-text .situation strong { color: var(--ink); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+  .case-metrics {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border: 1px solid var(--rule);
+    align-self: start;
+  }
+  .metric {
+    padding: 1.4rem 1.2rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .metric:nth-child(2n) { border-right: none; }
+  .metric:nth-last-child(-n+2) { border-bottom: none; }
+  .metric-num {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    color: var(--accent);
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .metric-label { font-size: 0.76rem; color: var(--muted); line-height: 1.4; }
 
-/* FRAMEWORK */
-.fw-bg{background:var(--bg2)}
-.fw-scenario{border:1px solid var(--bdr);background:var(--card);padding:2rem;margin-bottom:2rem}
-.fw-scenario h3{font-family:'Instrument Serif',serif;font-size:1.4rem;margin-bottom:0.5rem}
-.fw-scenario p{font-size:0.9rem;color:var(--t2);line-height:1.7}
-.fw-params{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);margin-top:1.2rem}
-.fw-param{background:var(--bg2);padding:0.8rem;text-align:center}
-.fw-param .fp-val{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--acc);line-height:1}
-.fw-param .fp-label{font-size:0.7rem;color:var(--t3);margin-top:0.2rem}
-.fw-stake{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bdr);border:1px solid var(--bdr);margin-bottom:2rem}
-.fw-stake-cell{background:var(--card);padding:1.2rem}
-.fw-stake-cell .fsc-role{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--acc);margin-bottom:0.3rem}
-.fw-stake-cell h4{font-size:0.9rem;margin-bottom:0.3rem;line-height:1.3}
-.fw-stake-cell p{font-size:0.8rem;color:var(--t2);line-height:1.6}
-.fw-timeline{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--bdr);border:1px solid var(--bdr);margin-bottom:2rem}
-.fw-phase{background:var(--card);padding:1.5rem}
-.fw-phase .fph-tag{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--acc);margin-bottom:0.2rem}
-.fw-phase .fph-title{font-family:'Instrument Serif',serif;font-size:1.15rem;margin-bottom:0.8rem;line-height:1.2}
-.fw-phase ul{list-style:none}
-.fw-phase ul li{font-size:0.8rem;color:var(--t2);padding:0.3rem 0;line-height:1.5;border-bottom:1px solid rgba(0,0,0,0.04)}
-.fw-phase ul li:last-child{border-bottom:none}
-.fw-phase ul li::before{content:"\2192";margin-right:0.4rem;color:var(--acc)}
-.fw-coe-dark{background:var(--dk);color:var(--dkt);padding:3rem 2rem}
-.fw-coe-dark .tag{color:var(--acc)}
-.fw-coe-dark .title{color:var(--dkt)}
-.fw-coe-dark .sub{color:var(--dkt2)}
-.fw-coe-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;border:1px solid rgba(255,255,255,0.08)}
-.fw-coe-card{background:var(--dk2);padding:1.5rem;border-right:1px solid rgba(255,255,255,0.06)}
-.fw-coe-card:last-child{border-right:none}
-.fw-coe-card .fcc-tag{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--acc);margin-bottom:0.2rem}
-.fw-coe-card .fcc-title{font-family:'Instrument Serif',serif;font-size:1.1rem;margin-bottom:0.7rem;line-height:1.2;color:var(--dkt)}
-.fw-coe-card ul{list-style:none}
-.fw-coe-card ul li{font-size:0.78rem;color:var(--dkt2);padding:0.25rem 0;line-height:1.5;border-bottom:1px solid rgba(255,255,255,0.03)}
-.fw-coe-card ul li:last-child{border-bottom:none}
-.fw-coe-card ul li::before{content:"\2192";margin-right:0.4rem;color:var(--acc)}
-.fw-kpi{width:100%;border-collapse:collapse;border:1px solid var(--bdr);margin-bottom:2rem}
-.fw-kpi th{background:var(--dk);color:var(--dkt);font-size:0.65rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:0.6rem 0.8rem;text-align:left}
-.fw-kpi td{padding:0.55rem 0.8rem;font-size:0.8rem;color:var(--t2);border-bottom:1px solid var(--bdr);line-height:1.4;vertical-align:top}
-.fw-kpi tr:nth-child(even) td{background:rgba(0,0,0,0.015)}
-.fw-kpi-cat{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--acc)}
+  /* ── SERVICES ────────────────────────────────────────────────────── */
+  #services { background: var(--white); }
+  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border: 1px solid var(--rule); }
+  .service-card {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--rule);
+    display: flex; flex-direction: column;
+  }
+  .service-card:last-child { border-right: none; }
+  .service-num {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--rule);
+    margin-bottom: 1.5rem;
+  }
+  .service-card h3 {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .service-card p { font-size: 0.85rem; flex: 1; margin-bottom: 1.5rem; }
+  .service-details { margin-bottom: 1.8rem; }
+  .service-detail {
+    font-size: 0.78rem;
+    color: var(--mid);
+    padding: 0.3rem 0;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between;
+  }
+  .service-detail:last-child { border-bottom: 1px solid var(--rule); }
+  .service-price {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+  }
+  .service-price small { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); }
+  .service-note { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-top: 0.8rem; }
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.5s ease,transform 0.5s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+  /* ── TOOLS ───────────────────────────────────────────────────────── */
+  #tools { background: var(--cream); }
+  .tools-intro { max-width: 560px; margin-bottom: 3rem; }
+  .tools-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border: 1px solid var(--rule); background: var(--white); }
+  .tool-group {
+    padding: 2rem 1.8rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .tool-group:nth-child(3n) { border-right: none; }
+  .tool-group:nth-last-child(-n+3) { border-bottom: none; }
+  .tool-group h4 {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+  .tool-list {
+    list-style: none;
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.9;
+  }
+  .tool-list li.highlight { color: var(--accent); font-weight: 500; }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav .n-links{display:none}
-  .hero-grid{grid-template-columns:1fr;text-align:center;justify-items:center}
-  .about-cols{grid-template-columns:1fr}
-  .cs-item{grid-template-columns:40px 1fr;gap:1rem}
-  .proj-grid{grid-template-columns:1fr}
-  .hl-grid{grid-template-columns:1fr}
-  .skills-grid{grid-template-columns:1fr}
-  .fw-params{grid-template-columns:1fr 1fr}
-  .fw-stake{grid-template-columns:1fr}
-  .fw-timeline{grid-template-columns:1fr}
-  .fw-coe-grid{grid-template-columns:1fr}
-  .fw-coe-card{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06)}
-}
+  /* ── ABOUT ───────────────────────────────────────────────────────── */
+  #about { background: var(--ink); }
+  #about h2 { color: rgba(255,255,255,0.5); font-size: 0.72rem; font-family: var(--sans); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .about-headline {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 2rem;
+  }
+  .about-headline em { font-style: italic; color: rgba(178,222,198,0.8); }
+  .about-body p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.85; margin-bottom: 1rem; }
+  .about-body p:last-child { margin-bottom: 0; }
+  .about-facts {}
+  .fact {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  }
+  .fact:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+  .fact-label { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+  .fact-value { font-family: var(--serif); font-size: 1.1rem; color: rgba(255,255,255,0.85); text-align: right; }
+
+  /* ── CONTACT ─────────────────────────────────────────────────────── */
+  #contact { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08); }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .contact-headline {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .contact-headline em { font-style: italic; color: rgba(178,222,198,0.8); }
+  .contact-sub { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 2.5rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(255,255,255,0.1); }
+  .contact-link {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .contact-link:last-child { border-bottom: none; }
+  .contact-link:hover { background: rgba(255,255,255,0.04); }
+  .contact-link-name { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.7); }
+  .contact-link-value { font-size: 0.82rem; color: rgba(178,222,198,0.7); }
+  .contact-arrow { color: rgba(255,255,255,0.25); font-size: 1rem; }
+  .contact-note {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+
+  /* ── ANIMATIONS ──────────────────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(24px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.36s; }
+  .delay-4 { animation-delay: 0.5s; }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────────── */
+  @media (max-width: 780px) {
+    .tifa-grid { grid-template-columns: 1fr 1fr; }
+    .tifa-card:nth-child(2) { border-right: none; }
+    .tifa-card:nth-child(1),
+    .tifa-card:nth-child(2) { border-bottom: 1px solid var(--rule); }
+    .case-body { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { border-right: none; border-bottom: 1px solid var(--rule); }
+    .service-card:last-child { border-bottom: none; }
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .tool-group:nth-child(2n) { border-right: none; }
+    .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-stats { gap: 2rem; }
+    .nav-links { display: none; }
+  }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="n-inner">
-    <div class="n-name">Akshatha N Hegde</div>
-    <div class="n-links">
-      <a href="#about">About</a>
-      <a href="#cases">Case Studies</a>
-      <a href="#framework">Framework</a>
-      <a href="#projects">Projects</a>
-      <a href="#highlights">Highlights</a>
-    </div>
-  </div>
+  <a href="#hero" class="nav-name">Akshatha N Hegde</a>
+  <ul class="nav-links">
+    <li><a href="#framework">Framework</a></li>
+    <li><a href="#cases">Case Studies</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Hire Me</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="inner">
-    <div class="hero-grid">
-      <div class="avatar">AH</div>
-      <div class="hero-text">
-        <h1>I build things <em>from scratch.</em></h1>
-        <p>Customer Success Manager with 14+ years in enterprise SaaS. I've built a regional CS function from zero, launched a proprietary SaaS platform as an IC, and deployed change management programs across 150,000 employees. I write openly about ADHD and believe neurodivergent leadership is a strength, not a disclaimer.</p>
-        <div class="hero-tags">
-          <span>Enterprise SaaS</span>
-          <span>Customer Success</span>
-          <span>Product Builder</span>
-          <span>Change Management</span>
-          <span>ADHD Advocate</span>
-          <span>APAC &bull; EMEA &bull; UK</span>
-        </div>
+<section id="hero">
+  <div class="container">
+    <p class="label hero-label fade-up">Enterprise Platform Adoption Consultant · India · Remote</p>
+    <h1 class="hero-headline fade-up delay-1">
+      I find exactly why your<br><em>platform rollout failed</em><br>and build the fix.
+    </h1>
+    <p class="hero-sub fade-up delay-2">
+      14 years. 150,000 users. A framework built from pattern recognition across enterprise rollouts that kept breaking the same way — until I learned to see which layer was broken first.
+    </p>
+    <div class="hero-stats fade-up delay-3">
+      <div>
+        <span class="stat-num">94%</span>
+        <span class="stat-label">Signup in 72 hours<br>4,500 resistant users</span>
       </div>
+      <div>
+        <span class="stat-num">$75K</span>
+        <span class="stat-label">New revenue from<br>a format diagnosis</span>
+      </div>
+      <div>
+        <span class="stat-num">15 days</span>
+        <span class="stat-label">To save a client worth<br>40% of regional ARR</span>
+      </div>
+      <div>
+        <span class="stat-num">0%</span>
+        <span class="stat-label">Churn across<br>managed portfolios</span>
+      </div>
+    </div>
+    <div class="cta-row fade-up delay-4">
+      <a href="#contact" class="btn btn-primary">Book a 45-min diagnostic</a>
+      <a href="#cases" class="btn btn-ghost">See the proof</a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="about-bg">
-  <div class="inner">
-    <div class="tag reveal">About</div>
-    <h2 class="title reveal">The short version</h2>
-    <div class="about-cols reveal">
-      <div>
-        <p>I'm a Senior Customer Success Manager based in India, with 14 years of experience across enterprise SaaS companies in APAC, EMEA, and the UK. I've spent my career at the intersection of product, customer success, and real-world adoption.</p>
-        <p><strong>Builder story #1:</strong> I was hired as the founding CSM for a French SaaS company's APAC region. There were no playbooks, no templates, no processes. I built the entire CS function from scratch — onboarding frameworks, governance rhythms, Train-the-Trainer programs, Center of Excellence structures, and Ambassador networks — and grew the region to $4.5M ARR with zero churn.</p>
-        <p><strong>Builder story #2:</strong> I independently conceived, designed, and launched a proprietary AI-powered B2B SaaS platform from whiteboard to production across iOS, Android, and web. I owned everything: product vision, roadmap, wireframes, engineering collaboration, client onboarding, demos, pricing, and maintenance — as an individual contributor.</p>
-        <p>I write openly on LinkedIn about <strong>ADHD and neurodivergent leadership</strong>. I don't position it as a limitation — it's a differentiator. The hyperfocus, the pattern recognition, the ability to stay locked into hard problems until they're solved. That's how I work.</p>
-        <p>Outside of work, I'm building apps around ocean conservation and ADHD wellbeing, I'm supervised by two opinionated cats, and I believe consistency matters more than speed.</p>
+<!-- FRAMEWORK -->
+<section id="framework">
+  <div class="wide">
+    <p class="label" style="margin-bottom:1rem">The TIFA Framework</p>
+    <div class="framework-intro">
+      <h2>Most rollouts don't fail at implementation.<br>They fail at one of four layers.</h2>
+      <p style="margin-top:1rem">After 14 years of diagnosing why enterprise platforms stall — always around 20–30% adoption — I found the same four variables breaking in different sequences. The TIFA framework is how I find which one is yours.</p>
+    </div>
+
+    <div class="tifa-grid">
+      <div class="tifa-card">
+        <span class="tifa-letter">T</span>
+        <span class="tifa-tag">Layer 1</span>
+        <h3>Threat Response</h3>
+        <p>Employees' first reaction to new tools is threat assessment — will this replace me, expose my incompetence, add to my load? Until this resolves, no training works.</p>
+        <div class="tifa-signal">Signal: High login, zero feature use. Drop-off in days 1–14.</div>
       </div>
-      <div class="about-right">
-        <h4>At a glance</h4>
-        <div class="about-stat"><div class="as-num">14+ years</div><div class="as-label">Enterprise SaaS across APAC, EMEA, UK</div></div>
-        <div class="about-stat"><div class="as-num">$4.5M ARR</div><div class="as-label">Built from zero as founding CSM</div></div>
-        <div class="about-stat"><div class="as-num">$5M–$10M+</div><div class="as-label">Enterprise portfolios managed</div></div>
-        <div class="about-stat"><div class="as-num">0% churn</div><div class="as-label">Across managed portfolios</div></div>
-        <div class="about-stat"><div class="as-num">150,000</div><div class="as-label">Users enabled through change management</div></div>
-        <div class="about-stat"><div class="as-num">50+</div><div class="as-label">Executive Business Reviews delivered</div></div>
-        <div class="about-stat"><div class="as-num">4.5+ NPS</div><div class="as-label">Consistently maintained</div></div>
+      <div class="tifa-card">
+        <span class="tifa-letter">I</span>
+        <span class="tifa-tag">Layer 2</span>
+        <h3>Incentive Vacuum</h3>
+        <p>Adoption without visible reward stalls. Not financial — recognition, peer visibility, status. Gamification works not because it's fun but because it makes progress visible.</p>
+        <div class="tifa-signal">Signal: Plateau at 20–35%. Same 15% using it month after month.</div>
       </div>
+      <div class="tifa-card">
+        <span class="tifa-letter">F</span>
+        <span class="tifa-tag">Layer 3</span>
+        <h3>Format Mismatch</h3>
+        <p>Your rollout is built for how your project team learns — not how actual users consume information. Factory workers don't watch webinars. Executives don't read help docs.</p>
+        <div class="tifa-signal">Signal: High training attendance, low behaviour change afterward.</div>
+      </div>
+      <div class="tifa-card">
+        <span class="tifa-letter">A</span>
+        <span class="tifa-tag">Layer 4</span>
+        <h3>Advocacy Anchor</h3>
+        <p>Without one human signal from the top — visible, personal, behaviour-demonstrating — resistant employees wait for others to go first. Middle managers follow suit.</p>
+        <div class="tifa-signal">Signal: Slow start that never accelerates. Middle managers quiet.</div>
+      </div>
+    </div>
+
+    <div class="framework-note">
+      <p>Apply these four in order and you can achieve 90%+ signup in 72 hours with a digitally resistant demographic. I've done it. The number exists.</p>
     </div>
   </div>
 </section>
 
 <!-- CASE STUDIES -->
 <section id="cases">
-  <div class="inner">
-    <div class="tag reveal">Case Studies</div>
-    <h2 class="title reveal">How I've solved real problems</h2>
-    <p class="sub reveal">Anonymized to respect NDAs. The problems, approaches, and outcomes are real.</p>
+  <div class="container">
+    <p class="label" style="margin-bottom:1rem">Case Studies</p>
+    <h2 style="margin-bottom:3.5rem">Real problems.<br>Real numbers.</h2>
 
-    <div class="cs-list">
-      <!-- CS 1 -->
-      <div class="cs-item reveal">
-        <div class="cs-num">01</div>
-        <div class="cs-body">
-          <h3>Saving a 40%-of-ARR account from churn — in my first 15 days</h3>
-          <div class="cs-context">Global enterprise &bull; 15,000+ employees &bull; Internal communication platform &bull; APAC & US</div>
-          <p><strong>The situation:</strong> Fifteen days into my role as founding CSM, I inherited an enterprise client representing roughly 40% of the regional ARR. The customer had just signed their contract believing the platform included advanced newsletter and audience targeting capabilities. These features did not yet exist. The client refused to proceed with onboarding.</p>
-          <p><strong>What I did:</strong> I focused on three tracks simultaneously. First, I reviewed the contract with Sales to understand where expectations had diverged from product reality — then went back to the customer with transparency, not defensiveness. Second, I proposed a community-first, phased rollout that would deliver value immediately while we addressed the product gap. We co-designed a 90-day launch plan starting with 1,000 users, anchored by a CEO townhall video and gamification aligned to the company's culture of visibility and recognition. Third, I partnered with Product to design two new capabilities from user stories to delivery in 45 days — features that benefited the broader client base, not just this account.</p>
-          <p>I also set up biweekly regional check-ins and created local Ambassador users in every region — the first of its kind — who ran workshops and masterclasses to drive peer-led adoption.</p>
-          <div class="cs-metrics">
-            <div class="cs-metric"><div class="cm-val">93%</div><div class="cm-label">Adoption in pilot month (80% KPI)</div></div>
-            <div class="cs-metric"><div class="cm-val">40–45%</div><div class="cm-label">Active usage sustained annually</div></div>
-            <div class="cs-metric"><div class="cm-val">2-year</div><div class="cm-label">Renewal lock-in secured</div></div>
-            <div class="cs-metric"><div class="cm-val">45 days</div><div class="cm-label">New features from sprint to release</div></div>
+    <!-- Case 1 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="case-num">01</span>
+        <div>
+          <div class="case-tags">
+            <span class="tag">4,500 employees</span>
+            <span class="tag">Internal comms platform</span>
+            <span class="tag">Digitally resistant demographic</span>
+            <span class="tag">India</span>
           </div>
         </div>
       </div>
-
-      <!-- CS 2 -->
-      <div class="cs-item reveal">
-        <div class="cs-num">02</div>
-        <div class="cs-body">
-          <h3>Turning low adoption into a new revenue stream</h3>
-          <div class="cs-context">AI platform company &bull; 2,000 factory workers &bull; Inventory optimization &bull; India</div>
-          <p><strong>The situation:</strong> An enterprise client had rolled out an AI-driven inventory optimization product to roughly 2,000 factory workers across sites in India. Despite multiple platform walkthroughs and training sessions, adoption remained at 23%. The client wasn't realizing operational value.</p>
-          <p><strong>What I did:</strong> Instead of repeating the same training approach, I took a step back to understand the audience. Most end users were frontline workers who consumed information through short videos and WhatsApp — not formal dashboards or presentations. The gap wasn't product functionality; it was how we were communicating value in the wrong format for the audience.</p>
-          <p>I designed a series of multilingual DIY "How-to" videos recorded directly on the client's branded instance, plus a communication kit (posters, banners, WhatsApp assets) they could reuse in workshops and townhalls. This wasn't just a fix for one client — it became a scalable model.</p>
-          <div class="cs-metrics">
-            <div class="cs-metric"><div class="cm-val">45+</div><div class="cm-label">Videos produced across features</div></div>
-            <div class="cs-metric"><div class="cm-val">$75K</div><div class="cm-label">New enablement revenue in 6 months</div></div>
-            <div class="cs-metric"><div class="cm-val">23% &rarr; sustained</div><div class="cm-label">Adoption transformation</div></div>
+      <h3>94% signup in 72 hours — with a workforce that didn't want to be there</h3>
+      <div class="case-tifa">
+        <span class="tifa-badge">T — Threat Response</span>
+        <span class="tifa-badge">I — Incentive Vacuum</span>
+        <span class="tifa-badge">F — Format Mismatch</span>
+        <span class="tifa-badge">A — Advocacy Anchor</span>
+      </div>
+      <div class="case-body">
+        <div class="case-text">
+          <div class="situation">
+            <strong>The situation</strong>
+            <p>A major real estate company needed to deploy an internal communication platform to 4,500 employees — mostly in their late 30s–50s, with limited digital fluency. The previous platform had zero engagement. People weren't even logging in.</p>
+          </div>
+          <div class="situation">
+            <strong>The diagnosis</strong>
+            <p>Layer 1 was primary: this demographic's threat assessment was high — new technology signalled potential incompetence exposure. Layer 3 was secondary: the standard rollout assumed digital confidence the audience didn't have. Layer 2 and Layer 4 were both absent.</p>
+          </div>
+          <div class="situation">
+            <strong>The fix — all four layers, in order</strong>
+            <p>Phased rollout by business vertical (T). Gamification with badges and points (I). City-by-city in-person demos in the format that worked for this audience (F). The MD recorded a personal video inviting the first 100 users to become trainers — converting potential blockers into invested advocates (A).</p>
+          </div>
+        </div>
+        <div class="case-metrics">
+          <div class="metric">
+            <span class="metric-num">94%</span>
+            <span class="metric-label">Signup within 72 hours of launch</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">45–50%</span>
+            <span class="metric-label">Sustained engagement at 180 days</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">2×</span>
+            <span class="metric-label">Industry benchmark at 6 months (avg: 15–20%)</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">4,500</span>
+            <span class="metric-label">Users. Digitally resistant. Converted.</span>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- CS 3 -->
-      <div class="cs-item reveal">
-        <div class="cs-num">03</div>
-        <div class="cs-body">
-          <h3>Finding a use case the customer didn't know they needed</h3>
-          <div class="cs-context">Global FMCG brand &bull; 14 countries &bull; Employee engagement platform &bull; APAC & EMEA</div>
-          <p><strong>The situation:</strong> A major FMCG brand had strong adoption of their employee communication platform but low engagement around corporate social responsibility — an area employees cared deeply about but had no structured way to participate in through the platform.</p>
-          <p><strong>What I did:</strong> I identified the whitespace between what the platform offered and what employees actually wanted to do. I defined a new use case — a structured CSR engagement feature — and partnered with Product to design and build "Support My Cause" within the platform. I then rolled it out across 14 countries with governance, regional customization, and measurable participation tracking.</p>
-          <p>The customer didn't ask for this. I saw the gap between employee intent and platform capability, and turned it into a feature that deepened engagement and expanded the platform's value proposition.</p>
-          <div class="cs-metrics">
-            <div class="cs-metric"><div class="cm-val">2,000+</div><div class="cm-label">Participants across 14 countries</div></div>
-            <div class="cs-metric"><div class="cm-val">&euro;500K</div><div class="cm-label">CSR allocation through platform</div></div>
-            <div class="cs-metric"><div class="cm-val">14</div><div class="cm-label">Countries rolled out to</div></div>
+    <!-- Case 2 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="case-num">02</span>
+        <div>
+          <div class="case-tags">
+            <span class="tag">2,000 factory workers</span>
+            <span class="tag">AI optimisation platform</span>
+            <span class="tag">Multilingual</span>
+            <span class="tag">India</span>
           </div>
+        </div>
+      </div>
+      <h3>The problem wasn't the product. It was the format. $75K followed.</h3>
+      <div class="case-tifa">
+        <span class="tifa-badge">F — Format Mismatch</span>
+        <span class="tifa-badge">I — Incentive Vacuum</span>
+      </div>
+      <div class="case-body">
+        <div class="case-text">
+          <div class="situation">
+            <strong>The situation</strong>
+            <p>An enterprise client had rolled out an AI-driven inventory optimisation tool to 2,000 factory workers across India. Despite platform walkthroughs and training sessions, adoption was stuck at 23%. The internal team assumed it was a product problem.</p>
+          </div>
+          <div class="situation">
+            <strong>The diagnosis</strong>
+            <p>It wasn't. It was Layer 3 — format mismatch. Frontline factory workers consumed information through short videos and WhatsApp. Not dashboards. Not formal training sessions. The rollout was built for how the project team learned, not how the actual users did.</p>
+          </div>
+          <div class="situation">
+            <strong>The fix</strong>
+            <p>Designed a multilingual DIY video series recorded directly on the client's branded platform instance, plus a communication kit — posters, banners, WhatsApp assets — that field teams could use in workshops and townhalls. This became a reusable model.</p>
+          </div>
+        </div>
+        <div class="case-metrics">
+          <div class="metric">
+            <span class="metric-num">23%</span>
+            <span class="metric-label">Adoption before diagnosis</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">Scaled</span>
+            <span class="metric-label">Adoption after format change</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">$75K</span>
+            <span class="metric-label">New enablement revenue in 6 months</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">45+</span>
+            <span class="metric-label">Videos produced across features</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="case-num">03</span>
+        <div>
+          <div class="case-tags">
+            <span class="tag">40% of regional ARR</span>
+            <span class="tag">15 days</span>
+            <span class="tag">APAC</span>
+            <span class="tag">Enterprise SaaS</span>
+          </div>
+        </div>
+      </div>
+      <h3>15 days to save the account that would have ended the region</h3>
+      <div class="case-tifa">
+        <span class="tifa-badge">T — Threat Response</span>
+        <span class="tifa-badge">A — Advocacy Anchor</span>
+        <span class="tifa-badge">I — Incentive Vacuum</span>
+      </div>
+      <div class="case-body">
+        <div class="case-text">
+          <div class="situation">
+            <strong>The situation</strong>
+            <p>Fifteen days into a founding CSM role, an inherited enterprise client — representing roughly 40% of the region's ARR — refused to proceed with onboarding. The platform had been sold with capabilities that didn't yet exist. The client was at churn.</p>
+          </div>
+          <div class="situation">
+            <strong>The diagnosis</strong>
+            <p>The primary failure was trust — a form of Layer 1 threat response triggered not by technology fear but by expectation betrayal. The secondary gap was Layer 4: no advocacy structure existed. The client had no internal champion invested in success.</p>
+          </div>
+          <div class="situation">
+            <strong>The fix</strong>
+            <p>Radical transparency on the product gap. A phased 90-day rollout co-designed with the customer — not imposed. CEO townhall video as advocacy anchor. Gamification aligned to the company's recognition culture. Ambassador network built in every region. Two new product capabilities shipped in 45 days from user stories.</p>
+          </div>
+        </div>
+        <div class="case-metrics">
+          <div class="metric">
+            <span class="metric-num">93%</span>
+            <span class="metric-label">Adoption vs 80% KPI target</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">2-year</span>
+            <span class="metric-label">Renewal lock-in secured</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">45 days</span>
+            <span class="metric-label">New features: user story to release</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">40%</span>
+            <span class="metric-label">Of regional ARR protected</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wide">
+    <p class="label" style="margin-bottom:1rem">How I Work</p>
+    <h2 style="margin-bottom:0.8rem">Three ways to engage.<br>All fixed scope. You own everything.</h2>
+    <p style="max-width:560px; margin-bottom:3rem">I don't do open-ended retainers with new clients. Every engagement starts with something bounded — a specific deliverable, a fixed timeline, a price you know upfront. That protects you.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <h3>Adoption Audit</h3>
+        <p>Two weeks. I review your rollout, interview 3–5 actual users, apply the TIFA framework, and give you a written diagnosis with a 90-day fix plan. You don't need to commit to anything beyond two weeks.</p>
+        <div class="service-details">
+          <div class="service-detail"><span>Duration</span><span>2 weeks</span></div>
+          <div class="service-detail"><span>Delivery</span><span>Written report + Loom walkthrough</span></div>
+          <div class="service-detail"><span>Calls</span><span>One 45-min Q&A</span></div>
+          <div class="service-detail"><span>You own</span><span>Everything. Permanently.</span></div>
+        </div>
+        <div class="service-price">₹50–75K <small>/ fixed</small></div>
+        <a href="#contact" class="btn btn-primary" style="text-align:center">Start here</a>
+        <p class="service-note">Most clients start here before committing to larger work.</p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <h3>CS Foundation Sprint</h3>
+        <p>30 days. For SaaS teams with no formal CS structure. I build your health scoring framework, onboarding playbook, QBR template, and renewal risk process from scratch.</p>
+        <div class="service-details">
+          <div class="service-detail"><span>Duration</span><span>30 days</span></div>
+          <div class="service-detail"><span>Delivery</span><span>4 working frameworks + documentation</span></div>
+          <div class="service-detail"><span>Includes</span><span>Playbook, health scoring, QBR, risk process</span></div>
+          <div class="service-detail"><span>You own</span><span>Everything. Permanently.</span></div>
+        </div>
+        <div class="service-price">₹1–1.75L <small>/ fixed</small></div>
+        <a href="#contact" class="btn btn-ghost" style="text-align:center">Enquire</a>
+        <p class="service-note">Built the same way I built Sociabble's APAC function from zero.</p>
+      </div>
+
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <h3>Fractional CS Leadership</h3>
+        <p>Month 6+ only. 10–15 hours per week. I act as your de facto Head of CS — OKRs, escalations, team rhythms, hiring profile, renewal strategy. Only available after we've completed one fixed project.</p>
+        <div class="service-details">
+          <div class="service-detail"><span>Commitment</span><span>3-month minimum</span></div>
+          <div class="service-detail"><span>Hours</span><span>10–15 hrs/week</span></div>
+          <div class="service-detail"><span>Includes</span><span>Weekly sync + monthly CS health report</span></div>
+          <div class="service-detail"><span>Market</span><span>India / APAC / Remote</span></div>
+        </div>
+        <div class="service-price">₹2–3.5L <small>/ month</small></div>
+        <a href="#contact" class="btn btn-ghost" style="text-align:center">Discuss</a>
+        <p class="service-note">Not available to new clients without a completed project first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="wide">
+    <p class="label" style="margin-bottom:1rem">Expertise</p>
+    <div class="tools-intro">
+      <h2>Technical depth alongside the framework.</h2>
+      <p style="margin-top:0.8rem">I can diagnose the behavioural failure and build the technical layer that makes the fix stick — including WalkMe implementation from the builder, not just the end-user view.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-group">
+        <h4>DAP & Adoption</h4>
+        <ul class="tool-list">
+          <li class="highlight">WalkMe (builder-level)</li>
+          <li>In-app guided experiences</li>
+          <li>Adoption scorecards</li>
+          <li>Enablement content design</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h4>CS Platforms</h4>
+        <ul class="tool-list">
+          <li class="highlight">Gainsight</li>
+          <li>HubSpot</li>
+          <li>Salesforce</li>
+          <li>Zendesk</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h4>Analytics & Data</h4>
+        <ul class="tool-list">
+          <li>Looker</li>
+          <li>PowerBI</li>
+          <li>Tableau</li>
+          <li>Usage dashboards</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h4>Delivery</h4>
+        <ul class="tool-list">
+          <li class="highlight">Loom (async delivery)</li>
+          <li>Jira + Confluence</li>
+          <li>Notion + Airtable</li>
+          <li>Slack</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h4>Markets</h4>
+        <ul class="tool-list">
+          <li class="highlight">India / APAC</li>
+          <li>EMEA</li>
+          <li>UK</li>
+          <li>GCC enterprises</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h4>Certifications</h4>
+        <ul class="tool-list">
+          <li class="highlight">Microsoft ACM Specialist</li>
+          <li>WalkMe DAP</li>
+          <li>HubSpot CS</li>
+          <li>Gainsight Pulse</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wide">
+    <h2>About</h2>
+    <div class="about-grid">
+      <div>
+        <p class="about-headline">
+          I built a regional CS function from zero. <em>I know which layer breaks first.</em>
+        </p>
+        <div class="about-body">
+          <p>I've spent 14 years at the intersection of customer success, change management, and enterprise platform adoption — across APAC, EMEA, and the UK. My work at Sociabble as founding CSM for APAC, at Peak AI diagnosing a 23% factory worker adoption failure, and at MSL building a proprietary AI SaaS platform as an individual contributor gave me pattern recognition that doesn't come from a course.</p>
+          <p>The TIFA framework — Threat, Incentive, Format, Advocacy — is what I built from watching the same four variables break enterprise rollouts in different sequences for 14 years. It is not a theory. It is a diagnostic tool with proof points.</p>
+          <p>I work fixed scope, async-first, with written deliverables you own permanently. Based in India. Available for remote engagements globally.</p>
+        </div>
+      </div>
+      <div class="about-facts">
+        <div class="fact">
+          <span class="fact-label">Experience</span>
+          <span class="fact-value">14 years enterprise SaaS</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Users enabled</span>
+          <span class="fact-value">150,000+ across 3 continents</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">ARR built from zero</span>
+          <span class="fact-value">$4.5M, zero churn, founding CSM</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Churn rate</span>
+          <span class="fact-value">0% across managed portfolios</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Enterprise logos</span>
+          <span class="fact-value">TCS, Capgemini, Coca-Cola, ABB</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Location</span>
+          <span class="fact-value">India · Remote globally</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STRATEGIC FRAMEWORK -->
-<section id="framework" class="fw-bg">
-  <div class="inner">
-    <div class="tag reveal">Strategic Framework</div>
-    <h2 class="title reveal">How I'd deploy enterprise AI across 350,000 employees in India</h2>
-    <p class="sub reveal">A case study in scaling Claude adoption at a global IT services company &mdash; from signed contract to measurable business outcomes. This is how I think about the problem.</p>
-
-    <div class="fw-scenario reveal">
-      <h3>The scenario</h3>
-      <p>A $20B+ IT services enterprise headquartered in India, with 350,000 employees across 40+ countries, has signed an enterprise agreement to deploy an AI platform across three product lines: API (consumption-based) for engineering teams, enterprise seats for business functions, and an AI coding tool for developers. Goal: modernize legacy systems, accelerate software delivery, and support AI adoption among enterprise clients.</p>
-      <div class="fw-params">
-        <div class="fw-param"><div class="fp-val">350K</div><div class="fp-label">Employees</div></div>
-        <div class="fw-param"><div class="fp-val">3</div><div class="fp-label">Product lines</div></div>
-        <div class="fw-param"><div class="fp-val">40+</div><div class="fp-label">Countries</div></div>
-        <div class="fw-param"><div class="fp-val">Dual</div><div class="fp-label">Consumption + seats</div></div>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wide">
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-headline">
+          Your adoption is stalling.<br><em>I know why.</em>
+        </h2>
+        <p class="contact-sub">Start with a free 45-minute diagnostic call. No pitch. I'll tell you which TIFA layer is broken and whether I'm the right person to fix it.</p>
+        <a href="mailto:akshatha.hegde1@gmail.com?subject=Adoption Diagnostic — 45 min call" class="btn btn-primary">Book the diagnostic call</a>
       </div>
-    </div>
-
-    <!-- STAKEHOLDERS -->
-    <div class="tag reveal">Stakeholder Map</div>
-    <p class="sub reveal">Enterprise AI deployment at this scale requires alignment across six stakeholder groups. Each has different success criteria and engagement cadence.</p>
-
-    <div class="fw-stake reveal">
-      <div class="fw-stake-cell">
-        <div class="fsc-role">Executive Sponsor</div>
-        <h4>CTO / Chief AI Officer</h4>
-        <p>Owns strategic AI vision. Cares about competitive differentiation and board-level narrative. Engaged through quarterly executive reviews and roadmap briefings.</p>
-      </div>
-      <div class="fw-stake-cell">
-        <div class="fsc-role">Economic Buyer</div>
-        <h4>VP Engineering / Head of Delivery</h4>
-        <p>Controls budget across BUs. Needs ROI evidence per use case to justify investment. Engaged monthly with usage-to-outcome mapping.</p>
-      </div>
-      <div class="fw-stake-cell">
-        <div class="fsc-role">Technical Champion</div>
-        <h4>Platform Engineering / AI CoE Lead</h4>
-        <p>Drives internal adoption, builds integrations, defines usage standards. Most critical for day-to-day success. Weekly technical syncs and product roadmap previews.</p>
-      </div>
-      <div class="fw-stake-cell">
-        <div class="fsc-role">Adoption Owners</div>
-        <h4>Business Unit Heads / Delivery Leads</h4>
-        <p>Own P&L for specific practices. Need productivity gains in their teams. Engaged through BU-specific dashboards and use case workshops.</p>
-      </div>
-      <div class="fw-stake-cell">
-        <div class="fsc-role">Enablement Partners</div>
-        <h4>L&D / Internal Comms / HR</h4>
-        <p>Design internal training and change management. Engaged through Train-the-Trainer co-design and rollout planning.</p>
-      </div>
-      <div class="fw-stake-cell">
-        <div class="fsc-role">Governance</div>
-        <h4>CISO / Data Privacy / Legal</h4>
-        <p>Gate access and define acceptable use policies. Blockers if not engaged early. Need clarity on data handling and audit trails. Engaged pre-kickoff.</p>
-      </div>
-    </div>
-
-    <!-- KPI TABLE -->
-    <div class="tag reveal">Success Metrics</div>
-    <p class="sub reveal">Separate KPIs for each product model. The customer sees one health view, not three dashboards.</p>
-
-    <table class="fw-kpi reveal">
-      <thead><tr><th>Model</th><th>Metric</th><th>90-day target</th></tr></thead>
-      <tbody>
-        <tr><td><span class="fw-kpi-cat">API</span></td><td>Monthly token usage vs. committed spend</td><td>&ge;60% of committed volume</td></tr>
-        <tr><td><span class="fw-kpi-cat">API</span></td><td>Active production integrations</td><td>&ge;5 integrations live</td></tr>
-        <tr><td><span class="fw-kpi-cat">Seats</span></td><td>DAU / total licensed seats</td><td>&ge;40% DAU ratio</td></tr>
-        <tr><td><span class="fw-kpi-cat">Seats</span></td><td>Persona coverage (% of target roles activated)</td><td>&ge;4 distinct personas</td></tr>
-        <tr><td><span class="fw-kpi-cat">Code</span></td><td>Developer adoption among target engineering teams</td><td>&ge;50% of target devs active</td></tr>
-        <tr><td><span class="fw-kpi-cat">Code</span></td><td>Code acceptance rate (suggestions accepted / shown)</td><td>&ge;30% acceptance</td></tr>
-        <tr><td><span class="fw-kpi-cat">Outcome</span></td><td>Feature delivery velocity (before/after AI)</td><td>&ge;1.5x improvement</td></tr>
-        <tr><td><span class="fw-kpi-cat">Health</span></td><td>Executive engagement score</td><td>All 6 stakeholder groups engaged</td></tr>
-      </tbody>
-    </table>
-
-    <!-- 90-DAY PLAN -->
-    <div class="tag reveal">90-Day Plan</div>
-    <p class="sub reveal">The first 90 days aren't about managing accounts. They're about building the machine that manages accounts.</p>
-
-    <div class="fw-timeline reveal">
-      <div class="fw-phase">
-        <div class="fph-tag">DAYS 1&ndash;30</div>
-        <div class="fph-title">Learn. Diagnose. Align.</div>
-        <ul>
-          <li>Deep-dive into Claude API, Claude Enterprise, and Claude Code &mdash; experience each as a user</li>
-          <li>Shadow Support tickets to understand real pain points from day one</li>
-          <li>Map current India portfolio: who's live, who's piloting, who has whitespace</li>
-          <li>Build relationships with Sales, Product, and Engineering in SF</li>
-          <li>Run kickoff discovery with top 5 accounts &mdash; strategic alignment, org readiness, compliance</li>
-          <li>Study how Cognizant, Infosys, CRED, and Air India are currently deploying Claude</li>
-        </ul>
-      </div>
-      <div class="fw-phase">
-        <div class="fph-tag">DAYS 31&ndash;60</div>
-        <div class="fph-title">Build. Launch. Engage.</div>
-        <ul>
-          <li>Design India-specific onboarding frameworks for API and Enterprise customers</li>
-          <li>Create QBR templates, health scoring, and account plan structure</li>
-          <li>Launch first customer engagements: kickoffs, success plans, executive alignment</li>
-          <li>Build first-draft India CS playbook covering regional business culture</li>
-          <li>Establish async feedback loop for Product (insight briefs tied to revenue impact)</li>
-          <li>Identify patterns across engagements to inform scalable approaches</li>
-        </ul>
-      </div>
-      <div class="fw-phase">
-        <div class="fph-tag">DAYS 61&ndash;90</div>
-        <div class="fph-title">Scale. Prove. Expand.</div>
-        <ul>
-          <li>Expand beyond initial 5 accounts</li>
-          <li>Deliver first QBRs linking usage data to business outcomes and ROI</li>
-          <li>Design Train-the-Trainer and COE frameworks for GCC customers</li>
-          <li>Present first regional insights report to global CS and Product leadership</li>
-          <li>Document what's working, iterate the playbook</li>
-          <li>Map expansion pipeline: use cases and BUs not yet onboarded</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COE PLAN (DARK) -->
-<div class="fw-coe-dark">
-  <div class="inner">
-    <div class="tag reveal">Center of Excellence</div>
-    <h2 class="title reveal" style="max-width:700px;">COE plan for the Software Development vertical</h2>
-    <p class="sub reveal" style="color:var(--dkt2);">The goal isn't to create a permanent CS dependency. It's to build the customer's internal muscle so they can scale AI adoption independently. Here's how I'd build a COE for the software development practice &mdash; the vertical where Claude Code and API have the most immediate impact.</p>
-
-    <div class="fw-coe-grid reveal">
-      <div class="fw-coe-card">
-        <div class="fcc-tag">WEEKS 1&ndash;4: FOUNDATION</div>
-        <div class="fcc-title">Charter &amp; champions</div>
-        <ul>
-          <li>Define COE mission and scope with CTO: "accelerate software delivery through AI-assisted development"</li>
-          <li>Identify 8&ndash;12 engineering leads as AI champions across delivery practices</li>
-          <li>Establish acceptable use policies with CISO &mdash; code review, IP, data handling</li>
-          <li>Build initial use case catalog: code generation, test writing, legacy modernization, PR review</li>
-          <li>Design Train-the-Trainer curriculum: prompt engineering for developers, Claude Code workflows, API integration patterns</li>
-          <li>Set up internal knowledge base for best practices and prompt libraries</li>
-        </ul>
-      </div>
-      <div class="fw-coe-card">
-        <div class="fcc-tag">WEEKS 5&ndash;10: ACTIVATE</div>
-        <div class="fcc-title">Pilot &amp; enable</div>
-        <ul>
-          <li>Deliver first Train-the-Trainer cohort &mdash; AI champions become regional dev trainers</li>
-          <li>Launch Claude Code pilots in 3&ndash;4 priority engineering teams with measurable KPIs</li>
-          <li>Deploy API integrations in first production workloads (CI/CD, code review, documentation)</li>
-          <li>Build team-specific prompt libraries for common workflows</li>
-          <li>Run "office hours" for developer questions and pair programming with Claude</li>
-          <li>First usage data review: adoption rate, acceptance rate, productivity impact</li>
-        </ul>
-      </div>
-      <div class="fw-coe-card">
-        <div class="fcc-tag">WEEKS 11&ndash;16: SCALE</div>
-        <div class="fcc-title">Transfer &amp; expand</div>
-        <ul>
-          <li>Expand beyond pilot teams using repeatable playbooks from Phase 2</li>
-          <li>Graduate AI champions to regional COE leads (India, US, Europe)</li>
-          <li>Publish internal case studies: "Team X shipped 2x faster with Claude Code"</li>
-          <li>Transition governance from CSM to internal COE team</li>
-          <li>Build innovation pipeline: new use cases sourced from within engineering org</li>
-          <li>Present first executive review with value realized vs. investment</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="reveal" style="font-size:0.88rem;color:var(--dkt2);font-style:italic;margin-top:1.5rem;max-width:700px;">Enterprise AI deployment isn't a product problem. It's an organizational change problem. The technology is ready. The question is whether the customer's organization is ready to absorb it &mdash; and the founding CSM's job is to make sure the answer is yes.</p>
-  </div>
-</div>
-
-<!-- PROJECTS -->
-<section id="projects" class="projects-dark">
-  <div class="inner">
-    <div class="tag reveal">Things I Build</div>
-    <h2 class="title reveal">Side projects and products</h2>
-    <p class="sub reveal">I build things because I can't not. These are projects I've designed, specced, or shipped outside of (and alongside) my day job.</p>
-
-    <div class="proj-grid">
-      <!-- PROPRIETARY PLATFORM -->
-      <div class="proj-card reveal">
-        <div class="pc-type">Proprietary Enterprise Platform &bull; NDA</div>
-        <h3>AI-Powered B2B SaaS Platform</h3>
-        <p>Independently conceived and delivered a proprietary enterprise SaaS platform from whiteboard to production — across iOS, Android, and web. Owned product vision, roadmap, wireframes, engineering collaboration, client onboarding, pricing, monetization strategy, and go-to-market.</p>
-        <p>Delivered 4 major platform upgrades, coordinated 900+ hours of engineering effort, onboarded 24 enterprise clients for feedback and validation, and designed a tiered monetization model. Built AI-powered features including automated intelligence digests and briefing document generation.</p>
-        <div class="pc-tags">
-          <span>Product Vision</span>
-          <span>iOS + Android + Web</span>
-          <span>AI Features</span>
-          <span>Enterprise Clients</span>
-          <span>Monetization</span>
-          <span>Go-to-Market</span>
+      <div>
+        <div class="contact-links">
+          <a href="mailto:akshatha.hegde1@gmail.com" class="contact-link">
+            <span class="contact-link-name">Email</span>
+            <span class="contact-link-value">akshatha.hegde1@gmail.com</span>
+            <span class="contact-arrow">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/productowner-akshatha-hegde/" target="_blank" class="contact-link">
+            <span class="contact-link-name">LinkedIn</span>
+            <span class="contact-link-value">linkedin.com/in/productowner-akshatha-hegde</span>
+            <span class="contact-arrow">↗</span>
+          </a>
+          <a href="https://www.upwork.com/freelancers/~014ab18f2b55452e8a" target="_blank" class="contact-link">
+            <span class="contact-link-name">Upwork</span>
+            <span class="contact-link-value">View profile</span>
+            <span class="contact-arrow">↗</span>
+          </a>
         </div>
-        <div class="proj-nda">Details anonymized under NDA. Scope and role are accurately represented.</div>
-      </div>
-
-      <!-- CITIZEN OCEAN -->
-      <div class="proj-card reveal">
-        <div class="pc-type">Personal Project &bull; Product Design</div>
-        <h3>Citizen Ocean</h3>
-        <p>A mobile platform that makes everyday ocean stewardship easy, emotional, and accessible. Designed to close the awareness-action gap: millions of people care about ocean health, but there's no consumer-friendly platform that turns concern into daily habits and measurable action.</p>
-        <p>Designed the full product: onboarding through an Ocean Archetype quiz, daily rituals and micro-stewardship actions, gamification with ethical guardrails (aligned with Green Fins & PADI guidelines), nearby activities map, and a corporate ESG challenge layer for monetization. Complete application workflow, data model, and investor Q&A framework designed.</p>
-        <div class="pc-tags">
-          <span>Product Design</span>
-          <span>Mobile-First</span>
-          <span>Gamification</span>
-          <span>Climate Tech</span>
-          <span>ESG</span>
-          <span>Ocean Conservation</span>
+        <div class="contact-note">
+          I respond to all enquiries within 48 hours. For urgent adoption issues — a rollout that is actively underperforming — email directly with "urgent" in the subject line.
         </div>
-      </div>
-
-      <!-- ADHD COMPANION -->
-      <div class="proj-card reveal">
-        <div class="pc-type">Personal Project &bull; In Progress</div>
-        <h3>ADHD Companion App</h3>
-        <p>A wellbeing tool designed for neurodivergent minds — built from lived experience. Focused on structured daily routines, task chunking, energy-level tracking, and gentle accountability without shame. Currently in the design and research phase.</p>
-        <p>Born from the same belief that drives my professional work: tools should meet people where they are, not where you want them to be.</p>
-        <div class="pc-tags">
-          <span>Neurodivergent Design</span>
-          <span>Wellbeing</span>
-          <span>In Progress</span>
-        </div>
-      </div>
-
-      <!-- STRATEGIC FRAMEWORKS -->
-      <div class="proj-card reveal">
-        <div class="pc-type">Strategic Framework &bull; Independent Research</div>
-        <h3>Enterprise AI Deployment at Scale</h3>
-        <p>A strategic framework for deploying enterprise AI across 350,000 employees at a global IT services company. Includes kickoff discovery questionnaire, stakeholder mapping, dual-model KPI framework (consumption + seat-based), governance cadence, COE build plan, 90-day phased deployment timeline, and risk mitigation matrix.</p>
-        <p>Written independently as a strategic exercise to demonstrate how I think about complex enterprise CS problems.</p>
-        <div class="pc-tags">
-          <span>Customer Success</span>
-          <span>Enterprise AI</span>
-          <span>Change Management</span>
-          <span>COE Design</span>
-          <span>Strategic Analysis</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HIGHLIGHTS -->
-<section id="highlights" class="about-bg">
-  <div class="inner">
-    <div class="tag reveal">Highlights</div>
-    <h2 class="title reveal">What I bring</h2>
-
-    <div class="hl-grid reveal">
-      <div class="hl-card"><div class="hc-val">14+</div><div class="hc-label">Years in enterprise SaaS</div></div>
-      <div class="hl-card"><div class="hc-val">0%</div><div class="hc-label">Churn across portfolios</div></div>
-      <div class="hl-card"><div class="hc-val">150K</div><div class="hc-label">Users enabled through change mgmt</div></div>
-      <div class="hl-card"><div class="hc-val">$4.5M</div><div class="hc-label">ARR built from zero as founding CSM</div></div>
-      <div class="hl-card"><div class="hc-val">93%</div><div class="hc-label">Adoption on an at-risk account</div></div>
-      <div class="hl-card"><div class="hc-val">$75K</div><div class="hc-label">New revenue from enablement model</div></div>
-    </div>
-
-    <div class="skills-grid reveal">
-      <div class="skill-group">
-        <h4>Customer Success</h4>
-        <p>Enterprise onboarding, platform adoption, health scoring, risk forecasting, QBRs, success planning, renewals, expansion, and advocacy. Both consumption-based and seat-based models.</p>
-      </div>
-      <div class="skill-group">
-        <h4>Change Management</h4>
-        <p>Train-the-Trainer programs, Center of Excellence design, Ambassador networks, organizational enablement at scale, executive sponsorship, governance frameworks.</p>
-      </div>
-      <div class="skill-group">
-        <h4>Product & Building</h4>
-        <p>Product discovery, roadmapping, feature prioritization, wireframing, engineering collaboration, go-to-market planning, monetization strategy, user story definition.</p>
-      </div>
-      <div class="skill-group">
-        <h4>Tools</h4>
-        <p>Salesforce, Gainsight, HubSpot, Zendesk, Jira, Confluence, Notion, Airtable, PowerBI, Tableau, Looker, Excel, Loom, WalkMe, Slack.</p>
-      </div>
-      <div class="skill-group">
-        <h4>Markets & Regions</h4>
-        <p>APAC, EMEA, UK. Deep understanding of Indian enterprise market, GCC dynamics, and cross-timezone collaboration with US and European headquarters.</p>
-      </div>
-      <div class="skill-group">
-        <h4>Industries</h4>
-        <p>AI/ML platforms, PR & communications technology, employee engagement SaaS, climate tech, enterprise IT services, consumer brands.</p>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p class="f-name">Akshatha N Hegde</p>
-  <p>Built with curiosity, two cats, and a lot of coffee.</p>
+  <p>Akshatha N Hegde · Enterprise Adoption Consultant · India</p>
+  <p>TIFA Framework · WalkMe Implementation · CS Foundation Builds</p>
 </footer>
 
-<script>
-const o=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
-</script>
 </body>
 </html>
